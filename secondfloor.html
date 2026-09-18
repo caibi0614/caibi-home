@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜比之家・二樓</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="secondfloor-page">
+
+    <div class="secondfloor-scene">
+
+        <!-- 二樓背景 -->
+        <img
+            src="images/secondfloor-bg.png"
+            class="secondfloor-background"
+            alt="菜比之家二樓"
+        >
+
+        <!-- 三間房門牌 -->
+        <div class="room-sign cai-sign">
+            🥦 菜菜
+        </div>
+
+        <div class="room-sign bibi-sign">
+            🍪 比比
+        </div>
+
+        <div
+            class="room-sign fan-sign"
+            id="fan-room-sign">
+            🏠 小可愛
+        </div>
+
+
+        <!-- 菜菜房門 -->
+        <button
+            class="room-door cai-door"
+            data-room="cai"
+            aria-label="菜菜房">
+        </button>
+
+        <!-- 比比房門 -->
+        <button
+            class="room-door bibi-door"
+            data-room="bibi"
+            aria-label="比比房">
+        </button>
+
+        <!-- 小可愛房門 -->
+        <button
+            class="room-door fan-door"
+            data-room="fan"
+            aria-label="小可愛房">
+        </button>
+
+
+        <!-- 房門提示視窗 -->
+        <div id="room-message" class="room-message">
+
+            <button
+                id="room-message-close"
+                class="room-message-close"
+                aria-label="關閉提示">
+                ×
+            </button>
+
+            <div id="room-message-content"></div>
+
+        </div>
+
+
+        <!-- 回一樓 -->
+        <a
+            href="livingroom.html"
+            class="secondfloor-back"
+            aria-label="回到一樓客廳">
+            🪜 回一樓
+        </a>
+
+
+        <!-- 目前登入者 -->
+        <div
+            id="current-user-status"
+            class="current-user-status">
+        </div>
+
+
+        <!-- 登出 -->
+        <button
+            id="logout-button"
+            class="logout-button">
+            🚪 登出
+        </button>
+
+    </div>
+
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- 二樓功能 -->
+    <script src="secondfloor.js"></script>
+
+</body>
+
+</html>

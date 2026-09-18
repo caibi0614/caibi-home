@@ -1,0 +1,1076 @@
+body {
+    background-color: #dff8d8;
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+p {
+    font-size: 24px;
+    color: #4a4a4a;
+}
+
+
+/* 首頁選單 */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+button {
+    width: 300px;
+    min-height: 70px;
+    padding: 20px;
+
+    font-size: 28px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+/* 菜比之家主畫面 */
+
+.game-area {
+    position: relative;
+    width: 500px;
+    margin: 40px auto;
+
+    animation: houseFloat 2s infinite alternate ease-in-out;
+}
+
+
+/* 房子圖片 */
+
+.house {
+    width: 100%;
+    display: block;
+    margin: 0;
+
+    cursor: pointer;
+    position: relative;
+}
+
+.house:hover {
+    scale: 1.05;
+    filter: drop-shadow(0 0 15px gold);
+}
+
+
+/* 房子上下漂浮 */
+
+@keyframes houseFloat {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+
+/* 房子大門點擊區 */
+
+.door-area {
+    position: absolute;
+
+    width: 18%;
+    height: 28%;
+
+    left: 41%;
+    top: 58%;
+
+    background: transparent;
+
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+/* 農場木牌點擊區 */
+
+.farm-area {
+    position: absolute;
+
+    width: 18%;
+    height: 5%;
+
+    left: 18%;
+    top: 64%;
+
+    background: transparent;
+
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+/* 烘焙坊木牌點擊區 */
+
+.bakery-area {
+    position: absolute;
+
+    width: 18%;
+    height: 5%;
+
+    left: 18%;
+    top: 69%;
+
+    background: transparent;
+
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+/* 信箱點擊區 */
+
+.mailbox-area {
+    position: absolute;
+
+    width: 13%;
+    height: 15%;
+
+    left: 1%;
+    top: 69%;
+
+    background: transparent;
+
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+/* 菜比之家 NPC */
+
+.npc {
+    position: absolute;
+    width: 18%;
+    height: auto;
+
+    z-index: 20;
+    cursor: pointer;
+
+    transition:
+        filter 0.2s ease,
+        translate 0.8s ease;
+}
+
+.npc:hover {
+    filter:
+        drop-shadow(0 0 10px white)
+        drop-shadow(0 0 15px gold);
+}
+
+
+/* 小菜雞 */
+
+.chicken {
+    left: 25%;
+    bottom: 2%;
+
+    animation: chickenIdle 1.8s ease-in-out infinite alternate;
+}
+
+
+/* 小比乾 */
+
+.cat {
+    right: 22%;
+    bottom: 2%;
+
+    animation: catIdle 2s ease-in-out infinite alternate;
+}
+
+
+/* NPC 對話框 */
+
+.npc-dialogue {
+    position: absolute;
+
+    width: 180px;
+    padding: 12px;
+
+    background: white;
+
+    border: 3px solid #333;
+    border-radius: 15px;
+
+    font-size: 18px;
+
+    display: none;
+
+    z-index: 30;
+}
+
+.chicken-dialogue {
+    left: 5%;
+    bottom: 22%;
+}
+
+.cat-dialogue {
+    right: 5%;
+    bottom: 22%;
+}
+
+
+/* 小菜雞待機動畫 */
+
+@keyframes chickenIdle {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* 小比乾待機動畫 */
+
+@keyframes catIdle {
+    from {
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        transform: translateY(-5px) scale(1.03);
+    }
+}
+
+
+/* 兩隻靠近時的愛心 */
+
+.love-heart {
+    position: absolute;
+
+    left: 47%;
+    bottom: 16%;
+
+    font-size: 30px;
+
+    display: none;
+
+    z-index: 40;
+
+    animation: heartPop 0.6s ease-in-out infinite alternate;
+}
+
+/* 愛心跳動 */
+
+@keyframes heartPop {
+    from {
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        transform: translateY(-8px) scale(1.2);
+    }
+}
+
+.meet-dialogue {
+    position: absolute;
+
+    left: 50%;
+    bottom: 28%;
+
+    transform: translateX(-50%);
+
+    width: 260px;
+    padding: 12px 16px;
+
+    background: white;
+    border: 3px solid #333;
+    border-radius: 16px;
+
+    font-size: 18px;
+    text-align: center;
+
+    display: none;
+    z-index: 45;
+}
+.meeting {
+    filter:
+        drop-shadow(0 0 12px white)
+        drop-shadow(0 0 18px pink);
+}
+
+/* =========================
+   菜菜農場
+========================= */
+
+.farm-page {
+    margin: 0;
+    background: #dff8d8;
+    overflow-x: hidden;
+}
+
+.farm-scene {
+    position: relative;
+
+    width: min(100%, 1200px);
+    margin: 0 auto;
+}
+
+.farm-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.farm-back {
+    position: absolute;
+
+    left: 8%;
+    top: 4%;
+
+    padding: 10px 16px;
+
+    background: rgba(255, 255, 255, 0.9);
+    border: 3px solid #6b4b2a;
+    border-radius: 15px;
+
+    color: #4a321d;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+    z-index: 20;
+}
+
+.farm-back:hover {
+    transform: scale(1.05);
+}
+/* =========================
+   農場角色
+========================= */
+
+.farm-character {
+    position: absolute;
+
+    width: 13%;
+    height: auto;
+
+    cursor: pointer;
+    z-index: 10;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+/* 花椰菜位置 */
+
+.broccoli {
+    left: 43%;
+    bottom: 18%;
+}
+
+
+/* 滑鼠碰到角色 */
+
+.farm-character:hover {
+    transform: translateY(-8px) scale(1.08);
+
+    filter:
+        drop-shadow(0 0 10px white)
+        drop-shadow(0 0 16px gold);
+}
+/* =========================
+   農場角色小卡
+========================= */
+
+.character-card {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 280px;
+    padding: 24px;
+
+    background: white;
+
+    border: 4px solid #6b4b2a;
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    display: none;
+
+    z-index: 50;
+}
+
+.card-close {
+    position: absolute;
+
+    right: 12px;
+    top: 8px;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    font-size: 24px;
+
+    border-radius: 50%;
+
+    background: #fff3e0;
+}
+
+.card-emoji {
+    font-size: 52px;
+    margin-bottom: 8px;
+}
+
+.character-card h2 {
+    margin: 8px 0;
+}
+
+.character-card p {
+    font-size: 18px;
+}
+
+.character-link {
+    display: inline-block;
+
+    margin-top: 12px;
+    padding: 10px 18px;
+
+    background: #dff8d8;
+
+    border-radius: 14px;
+
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.character-link:hover {
+    transform: scale(1.05);
+}
+.card-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    display: none;
+
+    z-index: 40;
+}
+.character-card.card-show {
+    display: block;
+    animation: cardPop 0.25s ease-out;
+}
+
+@keyframes cardPop {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+/* =========================
+   比比烘焙坊
+========================= */
+
+.bakery-page {
+    margin: 0;
+    background: #fff1df;
+    overflow-x: hidden;
+}
+
+.bakery-scene {
+    position: relative;
+
+    width: min(100%, 1200px);
+    margin: 0 auto;
+}
+
+.bakery-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bakery-back {
+    position: absolute;
+
+    left: 5%;
+    top: 4%;
+
+    padding: 10px 16px;
+
+    background: rgba(255, 255, 255, 0.92);
+    border: 3px solid #8b5a32;
+    border-radius: 15px;
+
+    color: #5c3a21;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+    z-index: 20;
+}
+
+.bakery-back:hover {
+    transform: scale(1.05);
+}
+/* =========================
+   菜比之家・客廳
+========================= */
+
+.livingroom-page {
+    margin: 0;
+    background: #f8e8c8;
+    overflow-x: hidden;
+}
+
+.livingroom-scene {
+    position: relative;
+
+    width: min(100%, 1200px);
+    margin: 0 auto;
+}
+
+.livingroom-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 回到屋外 */
+
+.livingroom-back {
+    position: absolute;
+
+    left: 5%;
+    top: 4%;
+
+    padding: 10px 16px;
+
+    background: rgba(255, 255, 255, 0.92);
+    border: 3px solid #8b5a32;
+    border-radius: 15px;
+
+    color: #5c3a21;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+    z-index: 20;
+}
+
+.livingroom-back:hover {
+    transform: scale(1.05);
+}
+/* =========================
+   客廳・樓梯點擊區
+========================= */
+
+.stairs-area {
+    position: absolute;
+
+    width: 24%;
+    height: 48%;
+
+    right: 1%;
+    top: 3%;
+
+    background: transparent;
+
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* 滑鼠移到樓梯時，出現淡淡提示 */
+.stairs-area:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+/* =========================
+   菜比之家・二樓
+========================= */
+
+.secondfloor-page {
+    margin: 0;
+    background: #f8e8c8;
+    overflow-x: hidden;
+}
+
+.secondfloor-scene {
+    position: relative;
+
+    width: min(100%, 1200px);
+    margin: 0 auto;
+}
+
+.secondfloor-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 回一樓 */
+
+.secondfloor-back {
+    position: absolute;
+
+    left: 4%;
+    bottom: 6%;
+
+    padding: 10px 16px;
+
+    background: rgba(255, 255, 255, 0.92);
+    border: 3px solid #8b5a32;
+    border-radius: 15px;
+
+    color: #5c3a21;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+    z-index: 20;
+}
+
+.secondfloor-back:hover {
+    transform: scale(1.05);
+}
+/* =========================
+   二樓房間門牌
+========================= */
+
+.room-sign {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+
+    background: transparent;
+    border: none;
+
+    color: #5c3a21;
+    font-size: 18px;
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 20;
+    pointer-events: none;
+}
+/* 菜菜門牌 */
+.cai-sign {
+    left: 25.75%;
+    top: 14%;
+}
+
+/* 比比門牌 */
+.bibi-sign {
+    left: 46.25%;
+    top: 14%;
+}
+
+/* 小可愛門牌 */
+.fan-sign {
+    left: 70.5%;
+    top: 14%;
+}
+/* =========================
+   二樓房門點擊區
+========================= */
+
+.room-door {
+    position: absolute;
+
+    padding: 0;
+    margin: 0;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+    z-index: 15;
+}
+
+/* 菜菜房 */
+.cai-door {
+    left: 20%;
+    top: 19%;
+
+    width: 17%;
+    height: 46%;
+}
+
+/* 比比房 */
+.bibi-door {
+    left: 40.5%;
+    top: 19%;
+
+    width: 17%;
+    height: 46%;
+}
+
+/* 小可愛房 */
+.fan-door {
+    left: 64.5%;
+    top: 19%;
+
+    width: 17%;
+    height: 46%;
+}
+
+
+/* 提示視窗 */
+
+.room-message {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 320px;
+    padding: 26px;
+
+    background: white;
+
+    border: 4px solid #8b5a32;
+    border-radius: 22px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    display: none;
+
+    z-index: 50;
+}
+
+.room-message-close {
+    position: absolute;
+
+    right: 10px;
+    top: 8px;
+
+    width: 34px;
+    min-height: 34px;
+    padding: 0;
+
+    font-size: 22px;
+
+    border-radius: 50%;
+}
+
+.room-message-content {
+    font-size: 18px;
+}
+
+.discord-link {
+    display: inline-block;
+
+    margin-top: 14px;
+    padding: 10px 16px;
+
+    background: #dff8d8;
+    border-radius: 14px;
+
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* =========================
+   菜比帳號登入頁
+========================= */
+
+.login-page {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f8e8c8;
+}
+
+.login-box {
+    width: min(90%, 420px);
+    padding: 36px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 4px solid #8b5a32;
+    border-radius: 28px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+
+    text-align: center;
+}
+
+.login-box h1 {
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    font-size: 36px;
+}
+
+.login-subtitle {
+    margin-bottom: 28px;
+
+    font-size: 18px;
+    color: #6f5a46;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: left;
+}
+
+.login-form label {
+    margin-top: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: #5c3a21;
+}
+
+.login-form input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 2px solid #d7b98f;
+    border-radius: 14px;
+
+    background: #fffdf8;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.login-form input:focus {
+    border-color: #8b5a32;
+
+    box-shadow: 0 0 0 3px rgba(139, 90, 50, 0.12);
+}
+
+#login-button {
+    width: 100%;
+
+    margin-top: 16px;
+
+    background: #dff8d8;
+}
+
+.login-help {
+    margin-top: 24px;
+
+    padding-top: 18px;
+
+    border-top: 2px dashed #d7b98f;
+}
+
+.login-help p {
+    margin: 0 0 10px;
+
+    font-size: 16px;
+}
+
+.discord-login-link {
+    display: inline-block;
+
+    padding: 10px 16px;
+
+    background: #e9e2ff;
+    border-radius: 14px;
+
+    color: #4d4470;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-back {
+    display: inline-block;
+
+    margin-top: 22px;
+
+    color: #6f5a46;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* =========================
+   私人房間共用版型
+========================= */
+
+.private-room-page {
+    margin: 0;
+    background: #f8e8c8;
+    overflow-x: hidden;
+}
+
+.private-room-scene {
+    position: relative;
+
+    width: min(100%, 1200px);
+    margin: 0 auto;
+}
+
+.private-room-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.private-room-back {
+    position: absolute;
+
+    left: 5%;
+    top: 4%;
+
+    padding: 10px 16px;
+
+    background: rgba(255, 255, 255, 0.92);
+    border: 3px solid #8b5a32;
+    border-radius: 15px;
+
+    color: #5c3a21;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+    z-index: 20;
+}
+
+.private-room-back:hover {
+    transform: scale(1.05);
+}
+/* =========================
+   二樓登入狀態＋登出按鈕
+========================= */
+
+/* 目前登入者 */
+.current-user-status {
+    position: absolute;
+
+    right: 3%;
+    bottom: 4%;
+
+    /* 預設先隱藏 */
+    display: none;
+
+    padding: 8px 14px;
+
+    background: rgba(255, 255, 255, 0.92);
+    border: 2px solid #8b5a32;
+    border-radius: 14px;
+
+    color: #5c3a21;
+    font-size: 16px;
+    font-weight: bold;
+
+    z-index: 20;
+}
+
+
+/* 登出按鈕 */
+.logout-button {
+    position: absolute;
+
+    left: 50%;
+    bottom: 3%;
+
+    transform: translateX(-50%);
+
+    /* 預設先隱藏 */
+    display: none;
+
+    /* 蓋掉全站 button 設定 */
+    width: auto;
+    min-width: 0;
+    min-height: 0;
+
+    padding: 10px 18px;
+
+    font-size: 18px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 3px solid #8b5a32;
+    border-radius: 15px;
+
+    color: #5c3a21;
+
+    cursor: pointer;
+    z-index: 20;
+}
+
+.logout-button:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+/* =========================
+   小可愛房・玩家人物
+========================= */
+
+.player-character {
+    position: absolute;
+
+    left: 50%;
+    bottom: 8%;
+
+    transform: translateX(-50%);
+
+    width: 45%;
+    height: auto;
+
+    z-index: 20;
+
+    pointer-events: none;
+    user-select: none;
+
+    transition:
+        left 0.8s ease,
+        bottom 0.8s ease,
+        transform 0.2s ease;
+}

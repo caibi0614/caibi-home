@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>小可愛的房間｜菜比之家</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="private-room-page">
+
+    <div class="private-room-scene">
+
+        <!-- 小可愛房間背景 -->
+        <img
+            src="images/fan-room-bg.png"
+            class="private-room-background"
+            alt="小可愛的房間"
+        >
+        <!-- 玩家人物 -->
+<img
+    id="player-character"
+    class="player-character"
+    src="images/fan-character-default.png"
+    alt="玩家人物"
+>
+        <!-- 回到二樓 -->
+        <a
+            href="secondfloor.html"
+            class="private-room-back"
+            aria-label="回到二樓">
+            🚪 回二樓
+        </a>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="room-auth.js"></script>
+    <script src="fan-room.js"></script>
+</body>
+
+</html>
